@@ -597,9 +597,9 @@ nav ul a:hover::after {
 }
 
 .tvsimag{
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  height: 300px;
-  width: 200px;
+  clip-path: polygon(43% 0, 100% 0%, 57% 100%, 0 100%);
+  height: 380px;
+  width: 480px;
   background-image: url("./assets/image/histery/tvs.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -607,7 +607,12 @@ nav ul a:hover::after {
   /* transform: rotate(200deg); */
   position: absolute;
 }
-
+@media (max-width: 1024px) {
+  .tvsimag{
+    clip-path: none;
+    width: 100%;
+  }
+}
 /* BICK GALLERY */
 
 
