@@ -1,0 +1,733 @@
+/* Nave bare */
+
+/* Mobile menu slide-down animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#menu-toggle:checked ~ div:last-of-type {
+  animation: slideDown 1.5s ease forwards;
+}
+
+/* Hover underline effect for nav links */
+nav {
+  z-index: 999;
+}
+nav ul a {
+  position: relative;
+  transition: color 0.5s ease;
+}
+
+nav ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+nav ul a:hover::after {
+  width: 100%;
+}
+
+/* HERO SECTION */
+
+#home {
+  background-image: url("./assets/gif/herobg.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.animate-fade-delay {
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Animated Loding Bars */
+
+.loader__bar {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 50%;
+  background: white;
+  transform-origin: center bottom;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.loader__bar:nth-child(1) {
+  left: 0px;
+  transform: scale(1, 0.2);
+  -webkit-animation: barUp1 4s infinite;
+  animation: barUp1 4s infinite;
+}
+
+.loader__bar:nth-child(2) {
+  left: 15px;
+  transform: scale(1, 0.4);
+  -webkit-animation: barUp2 4s infinite;
+  animation: barUp2 4s infinite;
+}
+
+.loader__bar:nth-child(3) {
+  left: 30px;
+  transform: scale(1, 0.6);
+  -webkit-animation: barUp3 4s infinite;
+  animation: barUp3 4s infinite;
+}
+
+.loader__bar:nth-child(4) {
+  left: 45px;
+  transform: scale(1, 0.8);
+  -webkit-animation: barUp4 4s infinite;
+  animation: barUp4 4s infinite;
+}
+
+.loader__bar:nth-child(5) {
+  left: 60px;
+  transform: scale(1, 1);
+  -webkit-animation: barUp5 4s infinite;
+  animation: barUp5 4s infinite;
+}
+
+.loader__ball {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: rgb(245, 35, 35);
+  border-radius: 50%;
+  -webkit-animation: ball624 4s infinite;
+  animation: ball624 4s infinite;
+}
+
+@keyframes ball624 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  5% {
+    transform: translate(8px, -14px);
+  }
+
+  10% {
+    transform: translate(15px, -10px);
+  }
+
+  17% {
+    transform: translate(23px, -24px);
+  }
+
+  20% {
+    transform: translate(30px, -20px);
+  }
+
+  27% {
+    transform: translate(38px, -34px);
+  }
+
+  30% {
+    transform: translate(45px, -30px);
+  }
+
+  37% {
+    transform: translate(53px, -44px);
+  }
+
+  40% {
+    transform: translate(60px, -40px);
+  }
+
+  50% {
+    transform: translate(60px, 0);
+  }
+
+  57% {
+    transform: translate(53px, -14px);
+  }
+
+  60% {
+    transform: translate(45px, -10px);
+  }
+
+  67% {
+    transform: translate(37px, -24px);
+  }
+
+  70% {
+    transform: translate(30px, -20px);
+  }
+
+  77% {
+    transform: translate(22px, -34px);
+  }
+
+  80% {
+    transform: translate(15px, -30px);
+  }
+
+  87% {
+    transform: translate(7px, -44px);
+  }
+
+  90% {
+    transform: translate(0, -40px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2);
+  }
+
+  40% {
+    transform: scale(1, 0.2);
+  }
+
+  50% {
+    transform: scale(1, 1);
+  }
+
+  90% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1, 0.2);
+  }
+}
+
+@keyframes barUp1 {
+  0% {
+    transform: scale(1, 0.2);
+  }
+
+  40% {
+    transform: scale(1, 0.2);
+  }
+
+  50% {
+    transform: scale(1, 1);
+  }
+
+  90% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1, 0.2);
+  }
+}
+
+@-webkit-keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4);
+  }
+
+  40% {
+    transform: scale(1, 0.4);
+  }
+
+  50% {
+    transform: scale(1, 0.8);
+  }
+
+  90% {
+    transform: scale(1, 0.8);
+  }
+
+  100% {
+    transform: scale(1, 0.4);
+  }
+}
+
+@keyframes barUp2 {
+  0% {
+    transform: scale(1, 0.4);
+  }
+
+  40% {
+    transform: scale(1, 0.4);
+  }
+
+  50% {
+    transform: scale(1, 0.8);
+  }
+
+  90% {
+    transform: scale(1, 0.8);
+  }
+
+  100% {
+    transform: scale(1, 0.4);
+  }
+}
+
+@-webkit-keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6);
+  }
+
+  100% {
+    transform: scale(1, 0.6);
+  }
+}
+
+@keyframes barUp3 {
+  0% {
+    transform: scale(1, 0.6);
+  }
+
+  100% {
+    transform: scale(1, 0.6);
+  }
+}
+
+@-webkit-keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8);
+  }
+
+  40% {
+    transform: scale(1, 0.8);
+  }
+
+  50% {
+    transform: scale(1, 0.4);
+  }
+
+  90% {
+    transform: scale(1, 0.4);
+  }
+
+  100% {
+    transform: scale(1, 0.8);
+  }
+}
+
+@keyframes barUp4 {
+  0% {
+    transform: scale(1, 0.8);
+  }
+
+  40% {
+    transform: scale(1, 0.8);
+  }
+
+  50% {
+    transform: scale(1, 0.4);
+  }
+
+  90% {
+    transform: scale(1, 0.4);
+  }
+
+  100% {
+    transform: scale(1, 0.8);
+  }
+}
+
+@-webkit-keyframes barUp5 {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  40% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1, 0.2);
+  }
+
+  90% {
+    transform: scale(1, 0.2);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes barUp5 {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  40% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1, 0.2);
+  }
+
+  90% {
+    transform: scale(1, 0.2);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* Button animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-btn {
+  opacity: 0;
+  animation: fadeUp 1.2s ease 1s forwards;
+}
+
+/* Brand Logos */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to all logos at once */
+.animate-fadeUp {
+  animation: fadeUp 2s ease-out forwards;
+}
+
+.brand img {
+  transition: transform 0.4s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.1);
+}
+
+/* ABOUT SECTION */
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: fadeLeft 1s ease-out forwards;
+}
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* BIKE IMAGE ANIMATION */
+.slideRight img {
+  transform: scaleX(-1);
+}
+.slideRight {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideRight 1s ease-out forwards;
+}
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* BIKES SECTION */
+.bick-zoom {
+  transition-duration: 1s;
+}
+.bick-zoom:hover {
+  transform: scale(1.3) translateY(-30px);
+}
+
+/* PASSION SECTION */
+
+.bg-gif {
+  background-image: url("./assets/gif/passion.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform; /* helps smooth animation */
+}
+
+/* SERVICES SECTION */
+
+.servicecard {
+  position: relative;
+  
+  background-color: rgb(255, 255, 255); /* faint white */
+  border-radius: 12px;
+}
+
+/* Blur Background Layer */
+.servicecard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/image/bikes/mt.png");
+  background-size: cover;
+  background-position: 100px;
+  background-repeat: no-repeat;
+  filter: blur(1px); /* blur amount */
+  opacity: 0.6; /* white washed effect */
+  z-index: 0;
+}
+
+/* Keep content above blur */
+.servicecard > * {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+
+/* BLOGS SECTION */
+
+/* Fade animation for images */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.blog-container{
+  background-image: url("./assets/image/blog/blogdotted.png"); 
+  background-repeat: no-repeat; 
+  /* background-size: cover;  */
+  background-position: center center; 
+  /* background-attachment: fixed;  */
+  /* background-color: #f0f0f0;  */
+}
+
+.mountain{
+  position: relative;
+  /* width: 45%; */
+}
+
+.mountain::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/image/blog/mountain.png"); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-position: center center; 
+  height: 364px;
+  width: 100%;
+  filter: blur(0.3px); /* blur amount */
+  opacity: 0.6; /* white washed effect */
+  /* z-index: 0; */
+}
+
+
+/* BICK HISTERY */
+
+
+.biketext h1{
+  font-size: 50px;
+  /* Apply a text-stroke with a white color and a width of 2 pixels */
+  -webkit-text-stroke: 3px black;
+  color: white; /* Set the text color */
+
+  /* Add a subtle text-shadow for depth and dimension */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bickcontent{
+  clip-path: polygon(0 0, 73% 0, 100% 100%, 30% 100%);
+  /* height: 300px; */
+  /* width: 150px; */
+  /* transform: rotateX(180deg); */
+}
+
+.rightarrow{
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.tvsimag{
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  height: 300px;
+  width: 200px;
+  background-image: url("./assets/image/histery/tvs.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* transform: rotate(200deg); */
+  position: absolute;
+}
+
+/* BICK GALLERY */
+
+
+
+/* TESTIMONIAL SECTION */
+
+  @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .card-enter {
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .card-exit {
+            animation: slideOutRight 0.6s ease-in forwards;
+        }
+
+        .stack-card {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .stack-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .stack-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .stack-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .stack-card:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .testimonial-card {
+            border-left: 6px solid;
+        }
+
+        .star {
+            color: #fbbf24;
+        }
+
+
+
+        /* FOOTER SECTION */
+
+        .fade-slide {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeMove 1.2s forwards;
+        }
+
+        .delay-1 {
+          animation-delay: 0.5s;
+        }
+
+        .delay-2 {
+          animation-delay: 1s;
+        }
+
+        .delay-3 {
+          animation-delay: 1.5s;
+        }
+
+        @keyframes fadeMove {
+          
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .jump{
+          animation: jumparrow 2s infinite;
+        }
+
+        @keyframes jumparrow{
+          0%{
+            opacity: 1;
+            transform: translateY(-20px);
+          }
+          50%{
+            opacity: 1;
+            transform: translateY(0px);
+          }
+          100%{
+            opacity: 1;
+            transform: translateY(-20px);
+          }
+        }

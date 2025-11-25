@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bike Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="bg-black text-white ">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full z-50">
+      <!-- Checkbox trigger -->
+      <input id="menu-toggle" type="checkbox" class="peer hidden" />
+
+      <!-- Top nav -->
+      <div
+        class="flex items-center justify-between px-6 py-4 bg-black/95 "
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <img src="./assets/image/logo.svg" alt="logo" class="w-10 h-10" />
+        </div>
+
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex gap-8 text-lg">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#bikes">Bikes</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testi">Testimonial</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Mobile hamburger icon -->
+        <label for="menu-toggle" class="md:hidden cursor-pointer text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <!-- Overlay (click to close) -->
+      <label
+        for="menu-toggle"
+        class="fixed inset-0 pointer-events-none md:hidden peer-checked:pointer-events-auto"
+      ></label>
+
+      <!-- Mobile menu -->
+      <div
+        class="md:hidden flex flex-col gap-10 bg-black/95 opacity-0 pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto"
+      >
+        <ul class="flex flex-col divide-y divide-white/5 py-4 text-center">
+          <li class="py-3"><a href="#home">Home</a></li>
+          <li class="py-3"><a href="#about">About</a></li>
+          <li class="py-3"><a href="#bikes">Bikes</a></li>
+          <li class="py-3"><a href="#services">Services</a></li>
+          <li class="py-3"><a href="#testi">Testimonial</a></li>
+          <li class="py-3"><a href="#blog">Blog</a></li>
+          <li class="py-3"><a href="#contact">Contact</a></li>
+        </ul>
+        <div
+          class="-translate-y-1/2 md:hidden flex space-x-6 text-2xl justify-center"
+        >
+          <a href="#" class="hover:text-pink-400 transition"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-blue-500 transition"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="hover:text-red-500 transition"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="#" class="hover:text-gray-400 transition"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div id="home" class="bg-black text-white flex items-center justify-center h-screen relative overflow-hidden"
+    >
+      <!-- Left Social Icons -->
+      <div
+        class="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex flex-col space-y-6 text-xl md:text-2xl"
+      >
+        <a href="#" class="hover:text-pink-400 transition"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#" class="hover:text-blue-500 transition"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="hover:text-red-500 transition"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="#" class="hover:text-gray-400 transition"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="text-center px-4 md:px-0 space-y-5">
+        <h1
+          class="text-3xl sm:text-4xl md:text-6xl font-light tracking-wide animate-fade"
+        >
+          Ride Beyond <span class="text-gray-300">Limits</span>,
+        </h1>
+        <h2
+          class="text-3xl sm:text-4xl md:text-6xl font-light tracking-wide animate-fade-delay"
+        >
+          Discover Your Perfect <span class="text-gray-300">Bike</span>
+        </h2>
+
+        <!-- Animated Bars -->
+        <div class="w-full flex justify-center">
+          <div
+            class="loader relative w-[75px] md:w-[75px] h-[75px] md:h-[100px]"
+          >
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__bar"></div>
+            <div class="loader__ball"></div>
+          </div>
+        </div>
+
+        <!-- Explore Button -->
+        <button
+          class="mt-8 px-6 py-2 border border-white rounded-full text-base sm:text-lg hover:bg-white hover:text-black transition animate-btn"
+        >
+          Explore →
+        </button>
+      </div>
+    </div>
+
+    <!-- BRAND LOGOS SECTION -->
+    <div class="flex items-center justify-center py-16">
+      <section class="w-full max-w-6xl px-4 text-center">
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 animate-fadeUp"
+        >
+          <!-- BMW -->
+          <div class="brand">
+            <img
+              src="./assets/image/brandlogos/bmw.png"
+              alt="BMW"
+              class="mx-auto w-20 md:w-25 md:h-25 lg:w-44 lg:h-44"
+            />
+            <p class="mt-4 font-semibold">BMW</p>
+          </div>
+
+          <!-- KTM -->
+          <div class="brand">
+            <img
+              src="./assets/image/brandlogos/ktm.png"
+              alt="KTM"
+              class="mx-auto w-20 md:w-25 md:h-25 lg:w-44 lg:h-44"
+            />
+            <p class="mt-4 font-semibold">KTM</p>
+          </div>
+
+          <!-- YAMAHA -->
+          <div class="brand">
+            <img
+              src="./assets/image/brandlogos/yamaha.png"
+              alt="Yamaha"
+              class="mx-auto w-20 md:w-25 md:h-25 lg:w-44 lg:h-44"
+            />
+            <p class="mt-4 font-semibold">YAMAHA</p>
+          </div>
+
+          <!-- ROYAL ENFIELD -->
+          <div class="brand">
+            <img
+              src="./assets/image/brandlogos/royalenfleld.png"
+              alt="Royal Enfield"
+              class="mx-auto w-20 md:w-25 md:h-25 lg:w-44 lg:h-44"
+            />
+            <p class="mt-4 font-semibold">ROYAL ENFIELD</p>
+          </div>
+
+          <!-- HONDA -->
+          <div class="brand col-span-2 sm:col-span-1">
+            <img
+              src="./assets/image/brandlogos/honda.png"
+              alt="Honda"
+              class="mx-auto w-20 md:w-25 md:h-25 lg:w-44 lg:h-44"
+            />
+            <p class="mt-4 font-semibold">HONDA</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div id="about" class="w-full min-h-screen flex flex-col gap-[50px] md:gap-10 justify-center items-center px-6 md:px-10 py-10"
+    >
+      <h2 class="text-3xl md:text-4xl font-bold underline underline-offset-8">
+        About
+      </h2>
+
+      <div
+        class="flex flex-col md:flex-row gap-[20px] items-center justify-center"
+      >
+        <!-- TEXT -->
+        <div class="space-y-6 fadeLeft flex-1 text-center md:text-left">
+          <h1
+            class="text-2xl md:text-6xl lg:text-[100px] font-bold tracking-[6px] md:tracking-[15px] lg:tracking-[30px]"
+          >
+            BIKES
+          </h1>
+          <p class="text-lg md:text-xl lg:text-2xl">
+            At MT,R15, we believe biking is more than just a ride – it’s
+            freedom, adventure, and passion on two wheels. At MT,R15, we believe
+            biking is more than just a ride – it’s freedom, adventure, and
+            passion on two wheels.
+          </p>
+
+          <button
+            class="px-6 py-2 bg-white text-black rounded-full font-medium hover:bg-gray-300 transition"
+          >
+            View More
+          </button>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="flex justify-center slideRight flex-1">
+          <img
+            src="./assets/image/about/aboutbick.png"
+            alt="Bike"
+            class="w-full md:w-[450px] lg:w-[100%]"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- BIKES SECTION -->
+    <div id="bikes" class="bg-black min-h-screen flex flex-col items-center justify-center py-10">
+      <h1 class="text-white text-4xl font-bold mb-8 tracking-wide underline underline-offset-8">BIKES</h1>
+
+      <!-- Wrapper -->
+      <div class="relative w-[100%] overflow-hidden py-[50px]">
+        <!-- Slider -->
+        <div id="slider" class="flex gap-7 slide-transition">
+          <!-- CARD 1 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/mt.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">MT</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/ktm.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] text-white w-22 z-1 p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">KTM</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/royalefleld.png"
+              class="h-[227px] w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">ROYAL EFIELD</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/yamahar15.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">YZF-R15</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 5 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/yzf-r1.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">YZF-R1</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 1 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/mt.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">MT</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/ktm.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] text-white w-22 z-1 p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">KTM</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/royalefleld.png"
+              class="h-[227px] w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">ROYAL EFIELD</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/yamahar15.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">YZF-R15</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+
+          <!-- CARD 5 -->
+          <div
+            class="overflow-visible overflow-y-visible bg-white relative text-black rounded-xl shadow-xl w-[300px] min-w-[300px] p-6 flex flex-col items-center gap-3"
+          >
+            <img
+              src="./assets/image/bikes/yzf-r1.png"
+              class="w-full bick-zoom z-1"
+            />
+            <div
+              class="bg-black absolute top-[50%] right-[-19%] w-22 z-1 text-white p-5 rounded-full -mt-6 mb-4 text-xl text-center"
+            >
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-4">YZF-R1</h2>
+            <button
+              class="border border-black rounded-full px-6 py-2 font-semibold"
+            >
+              View More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROWS -->
+      <div class="flex gap-10 text-white text-3xl mt-8 self-end">
+        <button onclick="slide('left')">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button onclick="slide('right')">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- PASSION SECTION -->
+    <div class="relative h-screen w-full overflow-hidden py-10">
+      <!-- Background -->
+      <div class="absolute inset-0 bg-center bg-cover bg-gif">
+      </div>
+      <!-- Content -->
+      <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-white text-4xl md:text-6xl font-semibold mb-6">
+          "Passion on Two Wheels"
+        </h1>
+
+        <p class="text-gray-200 text-lg md:text-xl max-w-4xl leading-relaxed">
+          We are committed to delivering high-performance bikes designed for every kind of rider.
+          Whether you’re chasing speed, commuting to work, or exploring the open road,
+          we’ve got the perfect bike for you.
+        </p>
+
+        <!-- Button -->
+        <button
+          class="mt-8 px-8 py-3 border border-white text-white text-lg rounded-md hover:bg-white hover:text-black transition duration-300">
+          Explore Model
+        </button>
+      </div>
+    </div>
+
+
+    <!-- SERVICES SECTION -->
+    <div id="service"  >
+        <h1 class="text-white text-4xl font-bold text-center mt-10 underline">
+          SERVICES
+        </h1>
+        <section class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- CARD 1 -->
+          <div class="servicecard relative card bg-white overflow-visible shadow-lg rounded-lg  p-6 text-center">
+            <!-- <img src="./assets/image/bikes/mt.png"
+                class="absolute inset-0 right-[40px] w-full h-full object-cover bg-bike right-[-30%]" /> -->
+
+            <div class="relative z-10 text-black ">
+              <h2 class="text-2xl font-bold mb-4 text-center">
+                Bike Maintenance & Repairs
+              </h2>
+
+              <p class="space-y-2 text-lg font-semibold text-left">
+                Regular servicing and tune-ups
+                Engine and brake check
+                Tyre replacement and wheel alignment
+                Chain and gear adjustments
+              </p>
+              <img src="./assets/image/bikes/ducati.png"
+                class="relative z-10 w-full mt-6 top-[60px]" />
+            </div>
+          </div>
+
+            
+
+          <!-- CARD 2 -->
+          <div class="servicecard relative card overflow-visible  shadow-lg rounded-lg p-6 text-center">
+            <!-- <img src="./assets/image/bikes/mt.png"
+                class="absolute  w-full h-full  bg-bike right-[-40%]" /> -->
+
+            <div class="relative z-10 text-black">
+              <h2 class="text-2xl font-bold mb-4 text-center">
+                Bike Maintenance & Repairs
+              </h2>
+
+              <p class="space-y-2 text-lg font-semibold text-left">
+                Regular servicing and tune-ups
+                Engine and brake check
+                Tyre replacement and wheel alignment
+                Chain and gear adjustments
+              </p>
+
+              <img src="./assets/image/bikes/yzf-r1.png"
+                class="relative z-10 w-full mt-6 top-[80px]" />
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="servicecard relative card bg-white overflow-visible shadow-lg rounded-lg p-6 text-center">
+            <!-- <img src="./assets/image/bikes/mt.png"
+              class="absolute inset-0 right-[40px] w-full h-full object-cover bg-bike right-[-30%]" /> -->
+
+            <div class="relative z-10 text-black">
+              <h2 class="text-2xl font-bold mb-4 text-center">
+                Bike Maintenance & Repairs
+              </h2>
+
+              <p class="space-y-2 text-lg font-semibold text-left">
+                Regular servicing and tune-ups
+                Engine and brake check
+                Tyre replacement and wheel alignment
+                Chain and gear adjustments
+              </p>
+
+              <img src="./assets/image/bikes/mt.png"
+                class="relative z-10 w-full mt-6 top-[60px]" />
+
+            </div>
+          </div>
+        </section>
+    </div>
+
+    <!-- BLOGS SECTION -->
+    <div class="w-full py-10">
+      <h1 class="text-center text-2xl font-bold tracking-widest mb-10">BLOG</h1>
+
+      <div class="space-y-20 blog-container">
+
+        <!-- 1 -->
+        <div class="relative flex flex-col md:flex-row items-center gap-8 px-6">
+          
+          <img src="./assets/image/blog/blog1.png"
+              class="w-full md:w-[45%] rounded-lg animate-fade"/>
+          <div class="mountain w-full md:w-[45%]">
+            <div class="h-full text-white">
+              <h2 class="text-4xl font-bold mb-3 z-10 text-white">
+                Explore more with freedom
+              </h2>
+              <p class="text-2xl leading-relaxed z-10 text-white">
+                Experience the joy of exploring new destinations on a bike. Feel the wind,
+                embrace the open road, and discover hidden places at your own pace.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="relative flex flex-col md:flex-row-reverse items-center gap-8 px-6">
+
+          <img src="./assets/image/blog/blog2.png"
+              class="w-full md:w-[45%] rounded-lg animate-fade"/>
+          <div class="mountain w-full md:w-[45%]">
+            <div class=" h-full text-white">
+              <h2 class="text-4xl font-bold mb-3 z-10 text-white">
+                Budget-friendly journeys
+              </h2>
+              <p class="text-2xl leading-relaxed z-10 text-white">
+                Whether it’s a long road trip, an adventurous mountain ride, or a calm
+                countryside journey, bike travel connects you with nature and gives
+                unforgettable memories.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="relative flex flex-col md:flex-row items-center gap-8 px-6">
+
+          <img src="./assets/image/blog/blog3.png"
+              class="w-full md:w-[45%] rounded-lg animate-fade"/>
+          <div class="mountain w-full md:w-[45%]">
+            <div class="h-full text-white">
+              <h2 class="text-4xl font-bold mb-3 z-10 text-white">
+                Capture beautiful experiences
+              </h2>
+              <p class="text-2xl leading-relaxed z-10 text-white">
+                Munnar is a town in the Western Ghats mountain range in India's Kerala state.
+                A hill station and former resort for British elite, it’s surrounded by rolling
+                hills dotted with tea plantations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BICK HISTERY -->
+    <div class="bg-black text-white py-10 md:py-20 mt-10 md:mt-[100px] lg:mt-[300px]">
+
+  <div class="w-full max-w-7xl mx-auto px-4">
+
+    <!-- MOBILE VIEW (NO ABSOLUTE) -->
+    <div class="flex flex-col gap-8 lg:hidden">
+
+      <!-- BIKE TEXT -->
+      <div class="bg-white flex justify-center items-center gap-2 text-black biketext bickcontent w-[50%] h-[300px] mx-auto">
+        <h1 class="text-black flex flex-row justify-center gap-2 text-4xl font-bold">
+          <span>B</span><span>I</span><span>K</span><span>E</span>
+        </h1>
+        <!-- IMAGE -->
+        <div class="tvsimag w-[100%] h-[300px] mx-auto"></div>
+      </div>
+
+      
+
+      <!-- 2004 -->
+      <div class="text-center w-full">
+        <p class="text-2xl mb-4">2004</p>
+        <p class="opacity-90 leading-relaxed text-sm">
+          The TVS XL 100 Heavy Duty is a moped bike available at a price
+          range of Rs. 42803 - Rs. 59966 in India.
+        </p>
+      </div>
+
+      <!-- 2003 -->
+      <div class="text-center w-full">
+        <p class="text-2xl mb-4">2003</p>
+        <p class="opacity-90 leading-relaxed text-sm">
+          The TVS XL 100 Heavy Duty is a moped bike available at a price
+          range of Rs. 42803 - Rs. 59966 in India.
+        </p>
+      </div>
+    </div>
+
+    <!-- DESKTOP / TABLET VIEW (ORIGINAL ABSOLUTE DESIGN) -->
+    <div class="hidden lg:block relative">
+
+      <!-- BIKE TEXT -->
+      <div class="bg-white text-black biketext bickcontent lg:absolute left-[0.5%] top-[-155%]">
+        <h1 class="text-black flex flex-row lg:flex-col"><span>B</span><span>I</span><span>K</span><span>E</span></h1>
+      </div>
+
+      <!-- ARROW -->
+      <div class="bg-white h-[60px] w-[60px] rightarrow lg:absolute top-[-15.5%] left-[-4%]"></div>
+
+      <!-- IMAGE -->
+      <div class="tvsimag lg:absolute h-[300px] w-[200px]"></div>
+
+      <!-- TIMELINE WRAPPER -->
+      <div class="w-full lg:border-t border-l lg:border-l-0 border-white relative">
+
+        <!-- DOT 1 -->
+        <div class="absolute top-[-6px] left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full"></div>
+
+        <!-- 2004 BLOCK -->
+        <div class="mt-10 flex justify-center">
+          <div class="text-center w-[300px]">
+            <p class="text-2xl mb-4">2004</p>
+            <p class="opacity-90 leading-relaxed">
+              The TVS XL 100 Heavy Duty is a moped bike available at a price range of Rs. 42803.
+            </p>
+          </div>
+        </div>
+
+        <!-- DOT 2 -->
+        <div class="absolute top-[-6px] right-[20%] w-4 h-4 bg-white rounded-full"></div>
+
+        <!-- 2003 BLOCK -->
+        <div class="mt-10 absolute top-[0px] right-[8%] flex justify-end">
+          <div class="text-center w-[300px]">
+            <p class="text-2xl mb-4">2003</p>
+            <p class="opacity-90 leading-relaxed">
+              The TVS XL 100 Heavy Duty is a moped bike available at a price range of Rs. 42803.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+    <!-- BICK GALERY -->
+    <div class="md:p-15 p-4">
+      <h1 class="text-white text-4xl font-bold text-center mt-10 underline">
+        GALLERY
+      </h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 max-w-[1400px] mx-auto mt-[100px] overflow-hidden">
+
+        <!-- ROW 1 -->
+        <div class="bg-white p-4 shadow rounded"> 
+            <h2 class="font-bold text-center text-black text-2xl">Hunter 350</h2>
+            <p class="text-gray-600 text-xl">A stylish modern roadster designed for everyday riding with comfort and agility.</p>
+        </div>
+
+        <div class="col-span-1 sm:col-span-2 max-h-[250px]">
+          <img src="./assets/image/gallery/one.png" class="rounded shadow w-full h-full object-cover">
+        </div>
+
+        <div class="bg-white p-4 shadow rounded"> 
+            <h2 class="font-bold text-center text-2xl text-black">Yamaha R15 V4</h2>
+            <p class="text-gray-600 text-xl">A sporty and aggressive machine built for performance and precise handling.</p>
+        </div>
+
+
+        <!-- ROW 2 -->
+        <div class="max-h-[250px]">
+          <img src="./assets/image/gallery/fore.jpg" class="rounded shadow w-full object-cover h-full">
+        </div>
+
+        <div class="bg-white p-4 shadow rounded max-h-[250px]"> 
+          <h2 class="font-bold text-center text-2xl text-black">Royal Enfield Classic 350</h2>
+          <p class="text-gray-600 text-xl">A timeless retro cruiser offering comfort, smooth rides, and classic charm.</p>
+        </div>
+
+        <div class="max-h-[250px]">
+          <img src="./assets/image/gallery/three.jpg" class="rounded shadow w-full object-cover h-full">
+        </div>
+
+        <div class="max-h-[250px]">
+          <img src="./assets/image/gallery/tow.jpg" class="rounded shadow w-full object-cover h-full">
+        </div>
+
+
+        <!-- ROW 3 -->
+        <div class="bg-white p-4 shadow rounded max-h-[250px]"> 
+          <h2 class="font-bold text-center text-2xl text-black">Honda CB350</h2>
+          <p class="text-gray-600 text-xl">A smooth, reliable, and powerful engine combined with a premium modern-retro look.</p>
+        </div>
+
+        <div class="md:row-span-2 h-[440px]">
+          <img src="./assets/image/gallery/five.jpg" class="rounded shadow w-full h-full object-cover">
+        </div>
+
+        <div class="max-h-[250px]">
+          <img src="./assets/image/gallery/six.jpg" class="rounded shadow w-full object-cover h-full">
+        </div>
+
+        <div class="bg-white p-4 shadow rounded max-h-[250px]"> 
+          <h2 class="font-bold text-center text-2xl text-black">KTM Duke 200</h2>
+          <p class="text-gray-600 text-xl">A lightweight streetfighter built for speed, agility, and sharp performance.</p>
+        </div>
+
+
+        <!-- ROW 4 -->
+        <div class="bg-white p-4 shadow rounded max-h-[250px]">
+          <h2 class="font-bold text-center text-2xl text-black">Apache RTR 160</h2>
+          <p class="text-gray-600 text-xl">A powerful commuter bike known for strong acceleration and sporty control.</p>
+        </div>
+
+        <div class="bg-white p-4 shadow rounded max-h-[250px]">
+          <h2 class="font-bold text-center text-2xl text-black">BMW G310R</h2>
+          <p class="text-gray-600 text-xl">A premium street bike featuring refined build quality and dynamic performance.</p>
+        </div>
+
+        <div class="max-h-[250px]">
+          <img src="./assets/image/gallery/seven.jpg" class="rounded shadow w-full object-cover h-full">
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TESTIMONIAL SECTION -->
+    <div class="bg-black min-h-screen flex items-center justify-center p-4">
+      <div class="w-full max-w-6xl">
+          <!-- Title -->
+          <h1 class="text-white text-4xl font-bold text-center mb-16 tracking-wider">TESTIMONIAL</h1>
+
+          <!-- Main Container -->
+          <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+              <!-- Left Card (Main) -->
+              <div id="mainCard" class="testimonial-card border-purple-500 bg-white rounded-lg p-8 w-full md:w-96 card-enter relative z-10">
+                  <div class="flex flex-col items-center">
+                      <!-- Profile Image -->
+                      <img id="profileImg" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Profile" class="w-24 h-24 rounded-full object-cover mb-6 border-4 border-purple-200">
+                      
+                      <!-- Name -->
+                      <h3 id="nameText" class="text-xl font-bold text-gray-800 mb-4">VIJAY</h3>
+                      
+                      <!-- Quote -->
+                      <div class="relative">
+                          <span class="text-5xl text-gray-300 absolute -top-3 -left-3">"</span>
+                          <p id="testimonialText" class="text-gray-600 text-center text-sm leading-relaxed px-4 py-2">
+                              The Classic ago delivers smooth power with excellent low-end torque, making it perfect for both city rides and long cruising. Riders appreciate its stable handling and relaxed riding posture.
+                          </p>
+                          <span class="text-5xl text-gray-300 absolute -bottom-3 -right-3">"</span>
+                      </div>
+                      
+                      <!-- Stars -->
+                      <div class="flex gap-1 mt-6">
+                          <span class="star text-2xl">★</span>
+                          <span class="star text-2xl">★</span>
+                          <span class="star text-2xl">★</span>
+                          <span class="star text-2xl">★</span>
+                          <span class="star text-2xl">★</span>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Right Stack (Preview Cards) -->
+              <div class="stack-card flex flex-row md:flex-col gap-2 text-2xl text-black items-center font-bold justify-center border-l-4 border-red-500 bg-white w-full h-25 md:w-15 md:h-100 rounded-lg" ><span>V</span><span>I</span><span>J</span><span>A</span><span>Y</span></div>
+              <div class="stack-card flex flex-row md:flex-col gap-2 text-2xl text-black items-center font-bold justify-center border-l-4 border-orange-500 bg-white w-full h-25 md:w-15 md:h-80 rounded-lg" ><span>S</span><span>I</span><span>V</span><span>A</span></div>
+              <div class="stack-card flex flex-row md:flex-col gap-2 text-2xl text-black items-center font-bold justify-center border-l-4 border-blue-500 bg-white w-full h-25 md:w-15 md:h-70 rounded-lg" ><span>G</span><span>O</span><span>P</span><span>I</span></div>
+              <div class="stack-card flex flex-row md:flex-col gap-2 text-2xl text-black items-center font-bold justify-center border-l-4 border-indigo-500 bg-white w-full h-25 md:w-15 md:h-40 rounded-lg" ><span>A</span><span>R</span><span>U</span><span>N</span></div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-center gap-8 mt-12">
+              <button id="prevBtn" class="text-white text-4xl hover:text-purple-400 transition-colors duration-300">
+                  &#10094;
+              </button>
+              <button id="nextBtn" class="text-white text-4xl hover:text-purple-400 transition-colors duration-300">
+                  &#10095;
+              </button>
+          </div>
+      </div>
+    </div>
+
+
+    <!-- FOOTER SECTION -->
+    <div class="relative">
+        <div class="container mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <!-- LEFT SIDE -->
+          <div class="fade-slide">
+            <h1 class="text-2xl md:text-5xl font-bold">Bike Website</h1>
+
+            <p class="mt-6 text-lg leading-8">
+              "Got a Question? Let's Connect!" <br>
+              Whether you need bike suggestions, reviews, or buying guidance – we're here to help.
+            </p>
+          </div>
+
+          <!-- NAVBAR -->
+          <div class="fade-slide delay-1 md:justify-self-center">
+            <h2 class="text-2xl font-bold mb-4">Navbar</h2>
+            <ul class="space-y-3 text-lg">
+              <li class="cursor-pointer hover:text-gray-400">Home</li>
+              <li class="cursor-pointer hover:text-gray-400">About</li>
+              <li class="cursor-pointer hover:text-gray-400">Bikes</li>
+              <li class="cursor-pointer hover:text-gray-400">Services</li>
+              <li class="cursor-pointer hover:text-gray-400">Blog</li>
+              <li class="cursor-pointer hover:text-gray-400">Testimonial</li>
+              <li class="cursor-pointer hover:text-gray-400">Contact</li>
+            </ul>
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="fade-slide delay-2 flex flex-col gap-3">
+            <h2 class="text-2xl font-bold">Address</h2>
+
+            <p>Address: BikeHub, Chennai, India</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Mail: support@bikehub.com</p>
+            <p>Working Hours: Mon - Sat (9:00 AM – 7:00 PM)</p>
+          </div>
+        </div>
+        <!-- Scroll Top Button -->
+        <button
+          class="absolute fade-slide jump cursor-pointer  h-10 w-10 flex justify-center items-center bottom-10 right-10 bg-white text-black text-2xl rounded-full shadow-lg hover:scale-110 transition">
+          ↑
+        </button>
+    </div>
+
+    
+      
+
+
+  <script src="./index.js"></script>
+  </body>
+</html>
