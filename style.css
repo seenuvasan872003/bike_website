@@ -425,7 +425,8 @@ nav ul a:hover::after {
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
+    z-index: -4;
   }
   100% {
     opacity: 1;
@@ -435,7 +436,8 @@ nav ul a:hover::after {
 
 /* Apply animation to all logos at once */
 .animate-fadeUp {
-  animation: fadeUp 2s ease-out forwards;
+  animation: fadeUp 2s ease-out both;
+  animation-timeline: view(40% auto);
 }
 
 .brand img {
@@ -498,11 +500,26 @@ nav ul a:hover::after {
 
 .servicecard {
   position: relative;
-  
   background-color: rgb(255, 255, 255); /* faint white */
   border-radius: 12px;
+  animation: fadebown 2s both;
+  animation-timeline: view(100% auto);
 }
 
+@keyframes fadebown {
+  0%{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50%{
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 /* Blur Background Layer */
 .servicecard::before {
   content: "";

@@ -13,7 +13,14 @@
       "default",
       {
         "ignore": [
-          "backdrop-filter"
+          "backdrop-filter",
+          "animation-timeline",
+          "animation-timeline: view(50% auto)",
+          "animation-timeline: view()",
+          "animation-timeline: view(40% auto)",
+          "animation-timeline: view(30% auto)",
+          "animation-timeline: view(10% auto)",
+          "animation-timeline: view(100% auto)"
         ]
       }
     ],
